@@ -30,6 +30,7 @@ const Text = styled.p`
 const Input = styled.input`
   padding: 10px;
   width: 50%;
+  
 `;
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
     if (e.key === 'Enter') {
       addPost();
     }
+    
   };
 
   return (
@@ -62,7 +64,7 @@ function App() {
         type="text"
         value={newPost}
         onChange={(e) => setNewPost(e.target.value)}
-        placeholder="글자를 입력해주세요"
+        placeholder="글자를 입력해 주세요"
         onKeyPress={handleKeyPress}
       />
     </AppContainer>
