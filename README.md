@@ -1,2 +1,2 @@
 # FrontEndStudy
-react 공부
+React study
