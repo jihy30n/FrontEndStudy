@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-
 
 const AppContainer = styled.div`
   font-family: Arial;
@@ -9,6 +8,7 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 `;
 
 const Board = styled.div`
@@ -18,55 +18,57 @@ const Board = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow-y: auto;
+  overflow: auto;
   word-break: break-all;
 `;
 
 const Text = styled.p`
   color: white;
   margin: 0;
+  text-align:left;
 `;
 
 const Input = styled.input`
   padding: 10px;
-  width: 50%;
-  
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 function App() {
-  
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
+  const boardRef = useRef(null);
 
-  const addPost = () => {
+  const addPost = (e) => {
+    e.preventDefault();
     if (newPost) {
       setPosts([...posts, newPost]);
       setNewPost('');
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      addPost();
+  useEffect(() => {
+    if (boardRef.current) {
+      boardRef.current.scrollTop = boardRef.current.scrollHeight;
     }
-    
-  };
+  }, [posts]);
 
   return (
     <AppContainer>
-      <h1>1주차: 칠판에 글 쓰기</h1>
-      <Board>
+      <h1>칠판에 글 쓰기</h1>
+      <Board ref={boardRef}>
         {posts.map((post, index) => (
-          <Text key={index}> {post} </Text>
+          <Text key={index}>{post}</Text>
         ))}
       </Board>
-      <Input
-        type="text"
-        value={newPost}
-        onChange={(e) => setNewPost(e.target.value)}
-        placeholder="글자를 입력해 주세요"
-        onKeyPress={handleKeyPress}
-      />
+      <form onSubmit={addPost}>
+        <Input
+          type="text"
+          value={newPost}
+          onChange={(e) => setNewPost(e.target.value)}
+          placeholder="글자를 입력해 주세요"
+        />
+      </form>
     </AppContainer>
   );
 }
