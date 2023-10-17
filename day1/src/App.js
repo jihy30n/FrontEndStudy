@@ -7,8 +7,7 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+
 `;
 
 const Board = styled.div`
@@ -30,14 +29,15 @@ const Text = styled.p`
 
 const Input = styled.input`
   padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
+  width: 120%;
 `;
+
+
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
-  const boardRef = useRef(null);
+  const boardRef = useRef();
 
   const addPost = (e) => {
     e.preventDefault();
