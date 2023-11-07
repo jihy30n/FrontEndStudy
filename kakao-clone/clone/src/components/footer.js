@@ -2,11 +2,14 @@ import React from 'react';
 import styled from "styled-components";
 
 const FooterContainer = styled.div`
-   position: fixed;
+   background:white;
    left: 0;
    bottom: 0;
-   width: 100%;
    padding: 20px;
+   font-size:10px;
+   margin-top: 100px;
+   margin-left:10%;
+
 `;
 
 const FooterLink = styled.a`

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 
+
 const HeaderContainer = styled.div`
    display: flex;
    justify-content: space-between;
    padding: 20px;
    align-items: center;
-   margin-left:70px;
-   margin-right:70px;
+   margin-left:7%;
+   margin-right:7%;
 
 `;
 
@@ -43,6 +44,10 @@ const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [langugeMode, setLanguageMode] = useState(false);
 
+  const search = () => {
+
+  };
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -62,6 +67,9 @@ const Header = () => {
         <NavItem href="#">약속과 책임</NavItem>
       </NavItems>
       <TogleButtons>
+        <TogleButton onClick={search}>
+          {"search"}
+        </TogleButton>
         <TogleButton onClick={toggleLangugeMode}>
           {langugeMode ? "korean" : "English"}
         </TogleButton>
