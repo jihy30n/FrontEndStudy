@@ -2,13 +2,31 @@ import React from 'react';
 import styled from "styled-components";
 import data from '../components/maindata.json'
 
+const Layout = ()=> {
+    const post = data.post;
+    return(
+        <PostGrid>
+          {post.map((post) => (
+          <PostItem key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.tags}</p>
+          </PostItem>
+        ))}
+        </PostGrid>
+    );
+   
+}
+export default Layout;
 
+//flex
 const PostGrid = styled.div`
-  display: grid;
-  margin-left: 10%;
-  margin-right:10%;
-  grid-template-columns: 2fr 1fr 1fr; //수정필요 - 그리드 공부
+  display: flex;
+  grid-template-columns: 2fr 1fr 1fr; 
   grid-gap: 30px;
+  @media (max-width: 768px) {
+    grid-template-columns: 2fr 1fr; 
+  }
+
 `; 
 
 const PostItem = styled.div`
@@ -17,20 +35,3 @@ const PostItem = styled.div`
   padding: 20px;
   border-radius: 10px;
 `;
-
-const Layout = ()=> {
-    const post = data.post;
-    return(
-        <PostGrid>
-            {post.map((post) => (
-        <PostItem key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.tags}</p>
-        </PostItem>
-      ))}
-        </PostGrid>
-
-    );
-   
-}
-export default Layout;

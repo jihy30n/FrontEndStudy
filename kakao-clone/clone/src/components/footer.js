@@ -1,22 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 
-const FooterContainer = styled.div`
-   background:white;
-   left: 0;
-   bottom: 0;
-   padding: 20px;
-   font-size:10px;
-   margin-top: 100px;
-   margin-left:10%;
-
-`;
-
-const FooterLink = styled.a`
-   margin-right: 20px;
-   text-decoration: none;
-`;
-
 const Footer = () => {
     return (
       <FooterContainer>
@@ -35,6 +19,23 @@ const Footer = () => {
     );
   }
   
+
+  const FooterContainer = styled.div`
+  background:white;
+  left: 0;
+  bottom: 0;
+  font-size:12px;
+  margin-top: 100px;
+
+`;
+
+const FooterLink = styled.a`
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+`;
+
+
   export default Footer;
   
   
