@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kakao-big-bold';
+    src: url('C:\FrontEndStudy\FrontEndStudy\kakao-clone\clone\src\assets\fonts\kakao-big-bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kakao-regular';
+    src: url('C:\FrontEndStudy\FrontEndStudy\kakao-clone\clone\src\assets\fonts\kakao-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kakao-big-regular';
+    src: url('C:\FrontEndStudy\FrontEndStudy\kakao-clone\clone\src\assets\fonts\kakao-big-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

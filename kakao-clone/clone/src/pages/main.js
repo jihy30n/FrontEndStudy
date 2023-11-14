@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import Calendar from '../assets/calender';
+import '../assets/fonts/fonts.css'; 
 
 
 const Main = () => {
@@ -29,14 +30,14 @@ const Main = () => {
 export default Main;
 
 const Banner = styled.div`
-   display: flex;
    padding: 70px;
+   display: flex;
    align-items: center;
 `;
 
 const MainContainer = styled.div`
-margin-left:10%;
-margin-right:10%;
+    font-family: 'kakao-big-bold';
+    
 `
 
 const BannerText  = styled.h3`
