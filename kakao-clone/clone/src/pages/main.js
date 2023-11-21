@@ -18,7 +18,7 @@ const Main = () => {
                 <Calendar/>
                 <BannerText>
                     {formattedDate}에 전하는<br></br>
-                    카카오 소식입니다.
+                    카카오 소식입니다
                 </BannerText>
             </Banner>
             <Layout/>
@@ -33,13 +33,26 @@ const Banner = styled.div`
    padding: 70px;
    display: flex;
    align-items: center;
+
 `;
 
 const MainContainer = styled.div`
     font-family: 'kakao-big-bold';
+    @media (max-width: 1100px) {
+        padding: 0px 20%;
     
+      }
+       
 `
-
 const BannerText  = styled.h3`
-    font-size : 35px;
+    margin-left: 20px;
+    font-size : 40px;
+    @media (max-width: 1100px) {
+        font-size : 30px;
+    }
+    @media (max-width: 900px) {
+        margin-left: 10px;
+        font-size : 25px;
+
+    }
 `

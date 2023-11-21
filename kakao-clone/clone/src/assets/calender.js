@@ -28,23 +28,30 @@ const Calendar = () => {
 };
 
 const CalendarContainer = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   background: #dddddd;
   color: black;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 10px;
   text-align: center;
-  margin-right:5%;
+  @media (max-width: 1100px) {
+    height: 70px;
+    width: 70px;
+  }
 `;
 
 const CalendarText = styled.p`
   margin: 15px;
+
 `;
 
 const CalendarDate = styled(CalendarText)`
   font-size: 50px;
   font-weight: bold;
+  @media (max-width: 1100px) {
+    font-size: 30px;
+  }
 `;
 
 

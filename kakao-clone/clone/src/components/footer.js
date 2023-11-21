@@ -25,7 +25,10 @@ const Footer = () => {
   left: 0;
   bottom: 0;
   font-size:12px;
-  margin-top: 100px;
+  margin:0;
+  padding: 70px 50px;
+
+  
 
 `;
 
