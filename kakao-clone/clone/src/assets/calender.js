@@ -28,6 +28,9 @@ const Calendar = () => {
 };
 
 const CalendarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 90px;
   width: 90px;
   background: #dddddd;
@@ -35,11 +38,15 @@ const CalendarContainer = styled.div`
   border-radius: 30px;
   padding: 10px;
   text-align: center;
-  @media (max-width: 1100px) {
-    height: 70px;
-    width: 70px;
-  }
-`;
+    @media (max-width: 1170px) {
+      height: 70px;
+      width: 70px;
+    }
+    @media (max-width: 900px) {
+      height: 50px;
+      width: 50px;
+    }
+  `;
 
 const CalendarText = styled.p`
   margin: 15px;
@@ -49,9 +56,14 @@ const CalendarText = styled.p`
 const CalendarDate = styled(CalendarText)`
   font-size: 50px;
   font-weight: bold;
-  @media (max-width: 1100px) {
+  @media (max-width: 1170px) {
     font-size: 30px;
   }
+}
+  @media (max-width: 900px) {
+    font-size : 20px;
+
+}
 `;
 
 

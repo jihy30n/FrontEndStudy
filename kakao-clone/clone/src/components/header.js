@@ -35,9 +35,13 @@ const Header = () => {
         <Logo>
           <img src={logo} alt="로고" width="70px" />
         </Logo>
-        <CenteredNavItems>
-          {/* 네비게이션 아이템들 */}
-        </CenteredNavItems>
+        <NavItems>
+          <NavItem href="#">소개</NavItem>
+          <NavItem href="#">이야기</NavItem>
+          <NavItem href="#">뉴스</NavItem>
+          <NavItem href="#">기술과 서비스</NavItem>
+          <NavItem href="#">약속과 책임</NavItem>
+        </NavItems>
         <TogleButtons>
           <FixedButton>
             <GoSearch size="20" />
@@ -65,7 +69,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   box-sizing: border-box;
   position: ${(props) => (props.isFixed ? 'fixed' : 'relative')};
-  animation: ${(props) => (props.isFixed ? 'down 0.5s ease' : 'none')};
+  z-index: 10;
 
   @keyframes down {
     0% {
@@ -76,85 +80,84 @@ const HeaderContainer = styled.header`
     }
   }
 `;
-const Nav = styled.div`
-  display: flex;
-  align-items: center;
-  background-color: white;
-  width: 100%;
-  cursor:pointer;
-  box-sizing: border-box;
-  &:not(:hover) a{
+  const Nav = styled.div`
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    cursor:pointer;
+    box-sizing: border-box;
+    &:not(:hover) a{
+      color: black;
+    }
+  `;
+
+  const Logo = styled.div`
+    margin-right: auto;
+    display: flex;
+    padding:24px;
+
+  `;
+
+  const NavItems = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    &:hover a{
+      color: grey;
+    }
+    
+  `;
+
+  const NavItem = styled.a`
+    text-decoration: none;
+    font-size: 16px;
+    justify-content: center;
     color: black;
-  }
-`;
+    padding: 0px 28px;
 
-const Logo = styled.div`
-   margin-right: auto;
-   display: flex;
-   padding:24px;
+    @media (max-width: 1170px) {
+      display: none;
+    }
+  `;
 
-`;
+  const TogleButton = styled.div`
+    margin-right:10px;
+    border: none;
+    justify-content: flex-end;
+    cursor: pointer;
+    @media (max-width: 1170px) {
+      display: none;
+    }
 
-const CenteredNavItems = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-  &:hover a{
-    color: grey;
-  }
-  
-`;
-
-const NavItem = styled.a`
-  margin-right: 20px;
-  text-decoration: none;
-  font-size: 15px;
-  justify-content: center;
-  color: black;
-  padding: 0px 28px;
-
-  @media (max-width: 1100px) {
-    display: none;
-  }
-`;
-
-const TogleButton = styled.div`
-  margin-right:10px;
-  border: none;
-  justify-content: flex-end;
-  cursor: pointer;
-  @media (max-width: 1100px) {
-    display: none;
-  }
-
-`;
-const TogleButtons = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
-   padding: 8px 16px;
-`;
+  `;
+  const TogleButtons = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 16px;
+  `;
 
 
-const FixedButton = styled.p`
-  border: none;
-  justify-content: flex-end;
-  cursor: pointer;
-  margin-right: 10px;
+  const FixedButton = styled.p`
+    border: none;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-right: 10px;
 
-`;
-
-
-const HamburgerButton = styled.p`
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  margin: 0 5px;
-
-  @media (min-width: 1100px) {
-    display: none;
-  }
-`;
+  `;
 
 
-export default Header;
+  const HamburgerButton = styled.p`
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin: 0 5px;
+
+    @media (min-width: 1170px) {
+      display: none;
+    }
+  `;
+
+
+  export default Header;
