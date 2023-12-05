@@ -45,7 +45,7 @@ const Layout = () => {
           </React.Fragment>
         ))}
       </LargePostItem>
-      <SmallPostItem>
+      <SmallPostItem> 
         {post.map((post) => (
           <React.Fragment key={post.id}>
             {post.size === "small" && (
@@ -102,7 +102,9 @@ const LargePostItem = styled.div`
   flex-basis: 700px;
   flex-shrink: 0;
   font-size: 20px;
-  position: relative;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
 `;
 
 const SmallPostItem = styled.div`
