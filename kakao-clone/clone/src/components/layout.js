@@ -25,7 +25,7 @@ const Layout = () => {
       <LargePostItem>
         {post.map((post) => (
           <React.Fragment key={post.id}>
-            {post.id === "1" && (
+            {post.size === "large" && (
               <PostItem
                 onClick={() => handlePostClick(post.id)}
                 isSelected={selectedPost === post.id}
@@ -45,11 +45,10 @@ const Layout = () => {
           </React.Fragment>
         ))}
       </LargePostItem>
-      
       <SmallPostItem>
         {post.map((post) => (
           <React.Fragment key={post.id}>
-            {post.id === "2" && (
+            {post.size === "small" && (
               <PostItem
                 onClick={() => handlePostClick(post.id)}
                 isSelected={selectedPost === post.id}  
@@ -100,16 +99,18 @@ const PostItem = styled.div`
 `;
 
 const LargePostItem = styled.div`
-  flex-basis: calc(50% - 20px);
+  flex-basis: 700px;
   flex-shrink: 0;
   font-size: 20px;
   position: relative;
 `;
 
 const SmallPostItem = styled.div`
-  flex-basis: calc(20% - 15px);
+  flex-basis: 300px;
   flex-shrink: 0;
   font-size: 13px;
+  position: relative;
+
 `;
 
 const ShareButtonWrapper = styled.div`
