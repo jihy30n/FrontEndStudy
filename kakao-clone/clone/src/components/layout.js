@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { LuMoreVertical } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
@@ -19,6 +19,30 @@ const Layout = () => {
     e.stopPropagation();
     dispatch(setSelectedPost(postId));
   };
+
+  /// 페이지 안에 들어오는지 감지하기,,,,
+  const [smallPostFixed, setSmallPostFixed] = useState(false);
+
+  const isSmallPostItemVisible = () => {
+    const smallPostElement = document.getElementById("smallPostItem");
+    if (smallPostElement) {
+      const rect = smallPostElement.getBoundingClientRect();
+      return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    }
+    return false;
+  };
+  const handleScroll = () => {
+    const isVisible = isSmallPostItemVisible();
+    setSmallPostFixed(!isVisible);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); 
+  ///
 
   return (
     <PostGrid>
@@ -45,7 +69,7 @@ const Layout = () => {
           </React.Fragment>
         ))}
       </LargePostItem>
-      <SmallPostItem> 
+      <SmallPostItem id="smallPostItem" isFixed={smallPostFixed}> 
         {post.map((post) => (
           <React.Fragment key={post.id}>
             {post.size === "small" && (
@@ -94,8 +118,6 @@ const PostItem = styled.div`
   margin-bottom: 30px;
   background-color: ${(props) => (props.isSelected ? "#333" : "white")};
   transition: background-color 0.3s ease;
-
-
 `;
 
 const LargePostItem = styled.div`
@@ -112,8 +134,10 @@ const SmallPostItem = styled.div`
   flex-shrink: 0;
   font-size: 13px;
   position: relative;
-
-`;
+  @media(max-width: 1170px) {
+      position: static;
+    }
+  `;
 
 const ShareButtonWrapper = styled.div`
   position: absolute;
