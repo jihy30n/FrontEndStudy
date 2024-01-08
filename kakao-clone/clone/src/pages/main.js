@@ -38,11 +38,11 @@ const Banner = styled.div`
 
 const MainContainer = styled.div`
     font-family: 'kakao-big-bold';
-    @media (max-width: 1170px) {
+    @media (max-width: 1021px) {
         padding: 0px 20%;
     
       }
-      @media (max-width: 900px) {
+      @media (max-width: 825px) {
         padding: 0px 10%;
     
       }
@@ -51,10 +51,10 @@ const MainContainer = styled.div`
 const BannerText  = styled.h3`
     margin-left: 20px;
     font-size : 40px;
-    @media (max-width: 1170px) {
+    @media (max-width: 1021px) {
         font-size : 30px;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 825px) {
         margin-left: 10px;
         font-size : 25px;
 

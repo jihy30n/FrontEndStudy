@@ -56,10 +56,9 @@ const CalendarText = styled.p`
 const CalendarDate = styled(CalendarText)`
   font-size: 50px;
   font-weight: bold;
-  @media (max-width: 1170px) {
+  @media (max-width: 1021px) {
     font-size: 30px;
   }
-}
   @media (max-width: 900px) {
     font-size : 20px;
 

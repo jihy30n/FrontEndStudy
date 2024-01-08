@@ -116,7 +116,7 @@ const HeaderContainer = styled.header`
     color: black;
     padding: 0px 28px;
 
-    @media (max-width: 1170px) {
+    @media (max-width: 1021px) {
       display: none;
     }
   `;
@@ -126,7 +126,7 @@ const HeaderContainer = styled.header`
     border: none;
     justify-content: flex-end;
     cursor: pointer;
-    @media (max-width: 1170px) {
+    @media (max-width: 1021px) {
       display: none;
     }
 
@@ -154,7 +154,7 @@ const HeaderContainer = styled.header`
     cursor: pointer;
     margin: 0 5px;
 
-    @media (min-width: 1170px) {
+    @media (min-width: 1021px ) {
       display: none;
     }
   `;
